@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "842385410987",
+    "project_id": "watchera1",
+    "storage_bucket": "watchera1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:842385410987:android:6ded24dba2ab0239b2e0ee",
+        "android_client_info": {
+          "package_name": "com.example.watchera"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBp3waO9A8PVifn2a4itexqZLpQFZEeeac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
