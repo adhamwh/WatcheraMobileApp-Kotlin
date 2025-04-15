@@ -1,6 +1,7 @@
 package com.example.watchera
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.Toast
@@ -34,6 +35,22 @@ class DetailActivity : AppCompatActivity() {
             CartManager.addToCart(cartItem)
             Toast.makeText(this, "${item.title} added to cart", Toast.LENGTH_SHORT).show()
         }
+
+
+        binding.button.setOnClickListener {
+            val cartItem = CartItem(
+                title = item.title,
+                price = item.price,
+                thumbnail = item.thumbnail.replace("drawable://", "").replace(".png", "")
+            )
+            CartManager.addToCart(cartItem)
+            Toast.makeText(this, "${item.title} added to cart", Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(this, OrderActivity::class.java)
+            startActivity(intent)
+        }
+
+
 
     }
 

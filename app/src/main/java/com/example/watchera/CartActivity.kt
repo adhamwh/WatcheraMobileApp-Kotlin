@@ -1,5 +1,6 @@
 package com.example.watchera
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -23,5 +24,16 @@ class CartActivity : AppCompatActivity() {
 
         binding.recyclerViewCart.layoutManager = LinearLayoutManager(this)
         binding.recyclerViewCart.adapter = adapter
+
+        binding.checkoutButton.setOnClickListener {
+            if (CartManager.getItems().isNotEmpty()) {
+                val intent = Intent(this, OrderActivity::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Your cart is empty!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+
     }
 }

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/orderLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".OrderActivity">
+
+    <!-- Cart Items Display -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewOrder"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="16dp" />
+
+
+    <!-- Visa Payment Form -->
+    <EditText
+        android:id="@+id/cardNumberEdit"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/orange"
+        android:hint="Card Number (16 digits)"
+        android:inputType="number" />
+
+
+    <EditText
+        android:id="@+id/expiryEdit"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/orange"
+        android:hint="Expiry (MM/YY)"
+
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/cvvEdit"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/orange"
+        android:hint="CVV"
+        android:inputType="numberPassword" />
+
+
+    <EditText
+        android:id="@+id/cardNameEdit"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/orange"
+        android:hint="Cardholder Name"
+        android:inputType="textPersonName" />
+
+    <!-- Submit Button -->
+
+    <Button
+        android:id="@+id/placeOrderButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/orange"
+        android:gravity="center"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:text="Checkout"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"/>
+
+
+</LinearLayout>
+
+
+
