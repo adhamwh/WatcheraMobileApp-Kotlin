@@ -1,16 +1,18 @@
 package com.example.watchera.Adapter
 
-import DetailActivity
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.watchera.DetailActivity
 import com.example.watchera.Domain.ItemsModel
+import com.example.watchera.R
 import com.example.watchera.databinding.ViewholderPopularBinding
 
-class PopularAdapter(val items: List<ItemsModel>) :
+class PopularAdapter(private val items: List<ItemsModel>) :
     RecyclerView.Adapter<PopularAdapter.ViewHolder>() {
 
     private lateinit var context: Context
@@ -27,14 +29,31 @@ class PopularAdapter(val items: List<ItemsModel>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
 
-        // Load title and price
+        // Set title and price
         holder.binding.titleTxt.text = item.title
-        holder.binding.priceTxt.text = "$" + item.price.toString()
+        holder.binding.priceTxt.text = "$${item.price}"
 
-        // Load thumbnail image locally
-        holder.binding.pic.loadLocalImage(item.thumbnail.replace("drawable://", ""), context)
+        // Clean image name
+        val rawName = item.thumbnail
+        val cleanName = rawName
+            .replace("drawable://", "")
+            .replace(".png", "")
+            .replace(".webp", "")
+            .replace(".jpg", "")
 
-        // Navigate to DetailActivity on item click
+        val resId = context.resources.getIdentifier(cleanName, "drawable", context.packageName)
+
+        Log.d("PopularAdapter", "Loading image: $rawName → Clean: $cleanName → ResID: $resId")
+
+        // Fallback to placeholder if image not found
+        if (resId != 0) {
+            holder.binding.pic.setImageResource(resId)
+        } else {
+            Log.e("PopularAdapter", "Image not found: $cleanName")
+            holder.binding.pic.setImageResource(R.drawable.placeholder) // you can create placeholder.png
+        }
+
+        // On click → open DetailActivity
         holder.itemView.setOnClickListener {
             val intent = Intent(context, DetailActivity::class.java)
             intent.putExtra("object", item)
@@ -43,10 +62,4 @@ class PopularAdapter(val items: List<ItemsModel>) :
     }
 
     override fun getItemCount(): Int = items.size
-
-    // Helper function to load local images
-    private fun ImageView.loadLocalImage(resourceName: String, context: Context) {
-        val resourceId = context.resources.getIdentifier(resourceName, "drawable", context.packageName)
-        setImageResource(resourceId)
-    }
 }

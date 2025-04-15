@@ -1,3 +1,5 @@
+package com.example.watchera
+
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -25,9 +27,9 @@ class SplashActivity : AppCompatActivity() {
         }
     }
 
-    private fun preloadData(dbHelper: DatabaseHelper) {
+     private fun preloadData(dbHelper: DatabaseHelper) {
         // Insert Banner
-        dbHelper.insertBanner("drawable://banner")
+        dbHelper.insertBanner("drawable://banner.png")
 
         // Insert Categories
         dbHelper.insertCategory(0, "Trending")

@@ -183,13 +183,15 @@
                 >
 
                 <LinearLayout
+
+                    android:id="@+id/homeLayout"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView3"
+                        android:id="@+id/imageViewHome"
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:layout_gravity="center"
@@ -264,14 +266,12 @@
                     android:orientation="vertical">
 
                     <ImageView
-
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:layout_gravity="center"
                         app:srcCompat="@drawable/btn_4" />
 
                     <TextView
-
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
@@ -280,23 +280,24 @@
                         android:textAlignment="center"
                         android:textColor="@color/white"
                         android:textSize="10sp" />
+
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/profileLayout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.2"
                     android:orientation="vertical">
 
                     <ImageView
-
+                        android:id="@+id/imageViewProf"
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:layout_gravity="center"
                         app:srcCompat="@drawable/btn_5" />
 
                     <TextView
-
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"

@@ -1,3 +1,5 @@
+package com.example.watchera
+
 import android.content.Context
 import android.os.Bundle
 import android.widget.ImageView
@@ -25,7 +27,8 @@ class DetailActivity : AppCompatActivity() {
     private fun initList() {
         val picList = ArrayList<String>()
         for (imageUrl in item.picUrl) {
-            picList.add(imageUrl.replace("drawable://", ""))
+            picList.add(imageUrl.replace("drawable://", "").replace(".png", ""))
+
         }
 
         // Load first image locally
@@ -47,7 +50,9 @@ class DetailActivity : AppCompatActivity() {
             item = intent.getSerializableExtra("object") as ItemsModel
 
             // Load thumbnail locally
-            img.loadLocalImage(item.thumbnail.replace("drawable://", ""), this@DetailActivity)
+            val cleanThumb = item.thumbnail.replace("drawable://", "").replace(".png", "")
+            img.loadLocalImage(cleanThumb, this@DetailActivity)
+
 
             titleTxt.text = item.title
             descriptionTxt.text = item.description

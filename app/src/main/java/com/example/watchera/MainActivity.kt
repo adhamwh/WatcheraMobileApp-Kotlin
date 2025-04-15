@@ -30,11 +30,20 @@ class MainActivity : AppCompatActivity() {
         initCategory()
         initPopular()
 
-        // Open LoginActivity when Profile ImageView is clicked
-        binding.imageView3.setOnClickListener {
+        binding.profileLayout.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
+
+        binding.profileLayout.setOnClickListener {
+            Log.d("BTN_CLICK", "✅ Profile clicked")
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
+
+        binding.imageViewHome.setOnClickListener {
+            Log.d("BTN_CLICK", "🏠 Home clicked")
+        }
+
     }
 
 
@@ -61,15 +70,46 @@ class MainActivity : AppCompatActivity() {
         binding.progressBarBanner.visibility = View.VISIBLE
         viewModel.loadBanner().observeForever { banners ->
             if (banners.isNotEmpty()) {
-                Glide.with(this)
-                    .load(banners[0].url.replace("drawable:/banner", ""))
-                    .into(binding.banner)
+                val rawUrl = banners[0].url
+                val cleanName = rawUrl
+                    .replace("drawable://", "")
+                    .replace(".png", "")
+                    .replace(".webp", "")
+                    .replace(".jpg", "")
+
+                val resId = resources.getIdentifier(cleanName, "drawable", packageName)
+
+                Log.d("MainActivity", "Banner loading: $rawUrl → Clean: $cleanName → ResID: $resId")
+
+                if (resId != 0) {
+                    binding.banner.setImageResource(resId)
+                } else {
+                    Log.e("MainActivity", "Banner image not found: $cleanName")
+                    binding.banner.setImageResource(R.drawable.placeholder) // optional fallback
+                }
             } else {
-                Log.w("initBanner", "No banners found.")
-                // Optionally show a default image or error message
+                Log.w("MainActivity", "No banners found.")
+                binding.banner.setImageResource(R.drawable.placeholder) // optional
             }
+
             binding.progressBarBanner.visibility = View.GONE
         }
     }
+
+
+    //private fun initBanner() {
+       // binding.progressBarBanner.visibility = View.VISIBLE
+       // viewModel.loadBanner().observeForever { banners ->
+          //  if (banners.isNotEmpty()) {
+            //    Glide.with(this)
+              //      .load(banners[0].url.replace("drawable:/banner", ""))
+                //    .into(binding.banner)
+         //   } else {
+            //    Log.w("initBanner", "No banners found.")
+                // Optionally show a default image or error message
+         //   }
+          //  binding.progressBarBanner.visibility = View.GONE
+      //  }
+    //}
 
 }
