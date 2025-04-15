@@ -3,10 +3,12 @@ package com.example.watchera
 import android.content.Context
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.watchera.Adapter.PicsAdapter
+import com.example.watchera.Domain.CartItem
 import com.example.watchera.Domain.ItemsModel
 import com.example.watchera.databinding.ActivityDetailBinding
 
@@ -22,6 +24,17 @@ class DetailActivity : AppCompatActivity() {
 
         bundle()
         initList()
+
+        binding.button2.setOnClickListener {
+            val cartItem = CartItem(
+                title = item.title,
+                price = item.price,
+                thumbnail = item.thumbnail.replace("drawable://", "").replace(".png", "")
+            )
+            CartManager.addToCart(cartItem)
+            Toast.makeText(this, "${item.title} added to cart", Toast.LENGTH_SHORT).show()
+        }
+
     }
 
     private fun initList() {

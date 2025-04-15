@@ -20,7 +20,9 @@ class SplashActivity : AppCompatActivity() {
 
         // Initialize SQLite Database
         val dbHelper = DatabaseHelper(this)
-        preloadData(dbHelper)
+        if (!dbHelper.isDataPreloaded()) {
+            preloadData(dbHelper)
+        }
 
         binding.startBtn.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
@@ -53,5 +55,21 @@ class SplashActivity : AppCompatActivity() {
         val itemId1 = dbHelper.insertPopular(item1)
         dbHelper.insertPopularImage(itemId1, "drawable://watch0_1.png")
         dbHelper.insertPopularImage(itemId1, "drawable://watch0_2.png")
+
+
+         val item2 = ItemsModel(
+             title = "Apple Watch MAX",
+             description = "Powerful features to keep you connected, active, and healthy.",
+             thumbnail = "drawable://watch1_0",
+             picUrl = arrayListOf(
+                 "drawable://watch1_1",
+                 "drawable://watch1_2"
+             ),
+             price = 231.95,
+             rating = 4.3
+         )
+         val itemId2 = dbHelper.insertPopular(item2)
+         dbHelper.insertPopularImage(itemId2, "drawable://watch1_1.png")
+         dbHelper.insertPopularImage(itemId2, "drawable://watch1_2.png")
     }
 }

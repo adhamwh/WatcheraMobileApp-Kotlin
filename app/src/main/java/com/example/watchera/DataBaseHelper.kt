@@ -132,6 +132,17 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         return db.insert(TABLE_POPULAR_IMAGES, null, values)
     }
 
+    fun isDataPreloaded(): Boolean {
+        val db = readableDatabase
+        val cursor = db.rawQuery("SELECT COUNT(*) FROM $TABLE_POPULAR", null)
+        var count = 0
+        if (cursor.moveToFirst()) {
+            count = cursor.getInt(0)
+        }
+        cursor.close()
+        return count > 0
+    }
+
     // Fetch All Banners
     fun getAllBanners(): List<BannerModel> {
         val banners = mutableListOf<BannerModel>()

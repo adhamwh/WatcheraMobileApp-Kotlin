@@ -44,6 +44,11 @@ class MainActivity : AppCompatActivity() {
             Log.d("BTN_CLICK", "🏠 Home clicked")
         }
 
+        binding.cartLayout.setOnClickListener {
+            val intent = Intent(this, CartActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
 
