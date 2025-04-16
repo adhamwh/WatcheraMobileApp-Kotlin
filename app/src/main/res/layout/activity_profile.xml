@@ -6,7 +6,21 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- ImageView that takes up the upper portion -->
+
+    <ImageView
+        android:id="@+id/backBtn"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:padding="8dp"
+        android:src="@drawable/back"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Back"
+        android:layout_gravity="start"/>
+
+
+
 
     <!-- Content at the bottom (Name, Email, Phone) -->
 
@@ -57,6 +71,18 @@
             android:textColor="@color/orange"
             android:textSize="32sp"
             android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/orange"
+            android:textSize="18sp"
+            android:layout_marginTop="24dp"
+            android:padding="12dp"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
 

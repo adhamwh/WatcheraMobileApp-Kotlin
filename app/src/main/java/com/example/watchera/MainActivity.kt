@@ -14,6 +14,7 @@ import com.example.watchera.Adapter.CategoryAdapter
 import com.example.watchera.Adapter.PopularAdapter
 import com.example.watchera.Domain.MainViewModel
 import com.example.watchera.databinding.ActivityMainBinding
+import com.google.firebase.auth.FirebaseAuth
 
 
 class MainActivity : AppCompatActivity() {
@@ -31,13 +32,12 @@ class MainActivity : AppCompatActivity() {
         initPopular()
 
         binding.profileLayout.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.profileLayout.setOnClickListener {
-            Log.d("BTN_CLICK", "✅ Profile clicked")
-            startActivity(Intent(this, LoginActivity::class.java))
+            val user = FirebaseAuth.getInstance().currentUser
+            if (user != null) {
+                startActivity(Intent(this, ProfileActivity::class.java))
+            } else {
+                startActivity(Intent(this, LoginActivity::class.java))
+            }
         }
 
         binding.imageViewHome.setOnClickListener {
