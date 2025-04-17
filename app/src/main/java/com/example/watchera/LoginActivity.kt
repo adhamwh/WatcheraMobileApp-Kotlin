@@ -35,7 +35,6 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.tvRegister.setOnClickListener {
-            // Navigate to Register Activity
             startActivity(Intent(this, RegisterActivity::class.java))
         }
 

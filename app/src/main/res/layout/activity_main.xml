@@ -94,7 +94,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:text="Category"
-                android:textColor="@color/black"
+                android:textColor="@color/text_primary"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -237,6 +237,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/favLayout"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"

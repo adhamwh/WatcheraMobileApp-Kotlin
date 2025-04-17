@@ -55,6 +55,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.favLayout.setOnClickListener {
+            val intent = Intent(this, FavActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.imageView2.setOnClickListener {
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
@@ -111,21 +116,5 @@ class MainActivity : AppCompatActivity() {
             binding.progressBarBanner.visibility = View.GONE
         }
     }
-
-
-    //private fun initBanner() {
-       // binding.progressBarBanner.visibility = View.VISIBLE
-       // viewModel.loadBanner().observeForever { banners ->
-          //  if (banners.isNotEmpty()) {
-            //    Glide.with(this)
-              //      .load(banners[0].url.replace("drawable:/banner", ""))
-                //    .into(binding.banner)
-         //   } else {
-            //    Log.w("initBanner", "No banners found.")
-                // Optionally show a default image or error message
-         //   }
-          //  binding.progressBarBanner.visibility = View.GONE
-      //  }
-    //}
 
 }

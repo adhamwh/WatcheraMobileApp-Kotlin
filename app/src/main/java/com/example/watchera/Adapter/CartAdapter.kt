@@ -34,7 +34,6 @@ class CartAdapter(
         holder.binding.imageCart.setLocalImage(item.thumbnail, context)
 
         holder.binding.removeBtn.setOnClickListener {
-            // 🔥 Remove from *this list* directly
             val removedItem = items[position]
             items.removeAt(position)
             CartManager.removeItem(removedItem)

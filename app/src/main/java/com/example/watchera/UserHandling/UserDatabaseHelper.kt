@@ -1,5 +1,6 @@
 package com.example.watchera.UserHandling
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -48,6 +49,7 @@ class UserDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
     }
 
     // Get user from database by id
+    @SuppressLint("Range")
     fun getUserById(userId: String): User? {
         val db = readableDatabase
         val cursor = db.query(
@@ -58,7 +60,7 @@ class UserDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
             null, null, null
         )
 
-        if (cursor != null && cursor.moveToFirst()) {
+        if (cursor.moveToFirst()) {
             val user = User(
                 cursor.getString(cursor.getColumnIndex(COLUMN_ID)),
                 cursor.getString(cursor.getColumnIndex(COLUMN_NAME)),

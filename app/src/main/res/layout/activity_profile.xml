@@ -32,7 +32,7 @@
         android:baselineAligned="false"
         android:contentDescription="User Profile Image"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/profp" />
+        app:srcCompat="@drawable/watcheralogo" />
 
 
     <LinearLayout
