@@ -37,7 +37,7 @@ class CategoryAdapter(val items: List<CategoryModel>) :
         }
 
         if (selectedPosition == position) {
-            holder.binding.titleCatTxt.setBackgroundResource(R.drawable.orange_bg)
+            holder.binding.titleCatTxt.setBackgroundResource(R.drawable.black_bg)
             holder.binding.titleCatTxt.setTextColor(context.resources.getColor(R.color.white))
         } else {
             holder.binding.titleCatTxt.setBackgroundResource(R.drawable.grey_bg)

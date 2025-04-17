@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -51,6 +52,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.orderLayout.setOnClickListener {
             val intent = Intent(this, OrderActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.imageView2.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
         }
 

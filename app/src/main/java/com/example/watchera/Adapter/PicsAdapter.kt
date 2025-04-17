@@ -41,7 +41,7 @@ class PicsAdapter(
         }
 
         if (selectedPosition == position) {
-            holder.binding.picLayout.setBackgroundResource(R.drawable.orange_stroke_bg)
+            holder.binding.picLayout.setBackgroundResource(R.drawable.black_stroke_bg)
         } else {
             holder.binding.picLayout.setBackgroundResource(R.drawable.grey_stroke_bg)
         }

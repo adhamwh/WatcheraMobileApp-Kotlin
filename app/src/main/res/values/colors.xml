@@ -6,5 +6,6 @@
     <color name="darkGrey">#707070</color>
     <color name="grey">#efefef</color>
     <color name="black2">#1e1e1e</color>
+    <color name="text_primary">#000000</color>
 
 </resources>

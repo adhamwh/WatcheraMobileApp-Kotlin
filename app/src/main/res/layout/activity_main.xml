@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
+    android:background="?android:windowBackground"
     tools:srcCompat="@drawable/banner"
     tools:context="MainActivity">
 
@@ -51,7 +51,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="16dp"
-                    android:background="@drawable/orange_bg"
+                    android:background="@drawable/black_bg"
                     android:padding="12dp"
                     app:srcCompat="@drawable/settings" />
 
