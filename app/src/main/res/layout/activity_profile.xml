@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Name"
-            android:textColor="@color/orange"
+            android:textColorHint="@color/orangeDarkMode"
             android:textSize="32sp"
             android:textStyle="italic" />
 
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Email"
-            android:textColor="@color/orange"
+            android:textColorHint="@color/orangeDarkMode"
             android:textSize="32sp"
             android:textStyle="italic" />
 
@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Phone"
-            android:textColor="@color/orange"
+            android:textColorHint="@color/orangeDarkMode"
             android:textSize="32sp"
             android:textStyle="italic" />
 
@@ -77,8 +77,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Logout"
-            android:textColor="@android:color/white"
-            android:backgroundTint="@color/orange"
+            android:textColor="@color/whiteToBlack"
+            android:backgroundTint="@color/orangeDarkMode"
             android:textSize="18sp"
             android:layout_marginTop="24dp"
             android:padding="12dp"
@@ -100,7 +100,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="WATCHERA - 2025"
-            android:textColor="@color/orange"
+            android:textColorHint="@color/orangeDarkMode"
             android:textSize="20sp"
             android:textStyle="italic" />
     </LinearLayout>

@@ -13,17 +13,17 @@ class RegisterActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var dbHelper: UserDatabaseHelper
-    private lateinit var binding: ActivityRegisterBinding  // ✅ Add this
+    private lateinit var binding: ActivityRegisterBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
-        setContentView(binding.root) // ✅ Only use this
+        setContentView(binding.root) //  Only use this
 
         auth = FirebaseAuth.getInstance()
         dbHelper = UserDatabaseHelper(this)
 
-        // ✅ Register button logic
+        // Register button logic
         binding.btnRegister.setOnClickListener {
             val name = binding.nameEditText.text.toString()
             val email = binding.etEmail.text.toString()
@@ -37,11 +37,12 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
 
-        // ✅ Login link click
+        //  Login link click
         binding.loginLink.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
+
     }
 
     private fun registerUser(email: String, password: String, name: String, phoneNumber: String) {

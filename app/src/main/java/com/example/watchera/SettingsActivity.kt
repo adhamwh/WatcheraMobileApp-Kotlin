@@ -1,6 +1,7 @@
 package com.example.watchera
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -28,5 +29,11 @@ class SettingsActivity : AppCompatActivity() {
             AppCompatDelegate.setDefaultNightMode(mode)
             recreate()
         }
+
+        binding.footerText.setOnClickListener {
+            Toast.makeText(this, "Exiting Watchera...", Toast.LENGTH_SHORT).show()
+            finishAffinity()
+        }
+
     }
 }

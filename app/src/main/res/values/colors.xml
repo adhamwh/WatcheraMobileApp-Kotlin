@@ -7,5 +7,7 @@
     <color name="grey">#efefef</color>
     <color name="black2">#1e1e1e</color>
     <color name="text_primary">#000000</color>
+    <color name="orangeDarkMode">#f4612d</color>
+    <color name="whiteToBlack">#FFFFFFFF</color>
 
 </resources>

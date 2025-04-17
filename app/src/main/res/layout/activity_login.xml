@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:text="WATCHERA"
         android:textSize="36sp"
-        android:textColor="@color/orange"
+        android:textColor="@color/orangeDarkMode"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +28,8 @@
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:textColorHint="@color/orange"
+        android:textColor="@color/text_primary"
+        android:textColorHint="@color/orangeDarkMode"
         android:hint="Email"
         android:inputType="textEmailAddress" />
 
@@ -36,7 +37,8 @@
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:textColorHint="@color/orange"
+        android:textColor="@color/text_primary"
+        android:textColorHint="@color/orangeDarkMode"
         android:hint="Password"
         android:inputType="textPassword" />
 
@@ -48,11 +50,11 @@
         android:layout_marginTop="32dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/orange"
+        android:backgroundTint="@color/orangeDarkMode"
         android:paddingTop="16dp"
         android:paddingBottom="16dp"
         android:text="Login"
-        android:textColor="@android:color/white"
+        android:textColor="@color/whiteToBlack"
         android:textSize="18sp"
         android:textAllCaps="false"
         android:gravity="center"/>
@@ -63,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Don't have an account? Register here"
-        android:textColor="@color/orange"
+        android:textColor="@color/orangeDarkMode"
         android:layout_marginTop="8dp"/>
 
 

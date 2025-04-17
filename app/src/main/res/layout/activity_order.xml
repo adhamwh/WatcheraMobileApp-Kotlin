@@ -21,8 +21,8 @@
         android:id="@+id/cardNumberEdit"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/orange"
+        android:textColor="@color/text_primary"
+        android:textColorHint="@color/orangeDarkMode"
         android:hint="Card Number (16 digits)"
         android:inputType="number" />
 
@@ -31,8 +31,8 @@
         android:id="@+id/expiryEdit"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/orange"
+        android:textColor="@color/text_primary"
+        android:textColorHint="@color/orangeDarkMode"
         android:hint="Expiry (MM/YY)"
 
         android:inputType="text" />
@@ -41,8 +41,8 @@
         android:id="@+id/cvvEdit"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/orange"
+        android:textColor="@color/text_primary"
+        android:textColorHint="@color/orangeDarkMode"
         android:hint="CVV"
         android:inputType="numberPassword" />
 
@@ -51,8 +51,8 @@
         android:id="@+id/cardNameEdit"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/orange"
+        android:textColor="@color/text_primary"
+        android:textColorHint="@color/orangeDarkMode"
         android:hint="Cardholder Name"
         android:inputType="textPersonName" />
 
@@ -62,16 +62,37 @@
         android:id="@+id/placeOrderButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/orange"
+        android:backgroundTint="@color/orangeDarkMode"
         android:gravity="center"
         android:paddingTop="16dp"
         android:paddingBottom="16dp"
         android:text="Checkout"
         android:textAllCaps="false"
-        android:textColor="@android:color/white"
+        android:textColor="@color/whiteToBlack"
         android:textSize="18sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/orange_stroke_bg"
+        android:gravity="center"
+        android:layout_marginTop="300dp"
+        android:orientation="horizontal"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:id="@+id/footerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="YOUR ORDERS "
+            android:textColor="@color/orangeDarkMode"
+            android:textSize="20sp"
+            android:textStyle="italic" />
+    </LinearLayout>
 
 
 </LinearLayout>
